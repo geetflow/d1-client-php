@@ -1,0 +1,20 @@
+{
+  "name": "geetflow/d1-client-php",
+  "description": "MySQL-like WebSocket Client for Cloudflare D1-compatible worker",
+  "type": "library",
+  "require": {
+    "textalk/websocket": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "D1Client\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "GeetFlow",
+      "email": "support@geetflow.com"
+    }
+  ]
+}
