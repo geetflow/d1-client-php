@@ -52,23 +52,31 @@ d1-client-php/
 ```php
 <?php
 
+<?php
+
 require __DIR__ . '/../vendor/autoload.php';
 
 use D1Client\D1Connection;
 
-$conn = new D1Connection(
-    "d1_connector.wispy-wildflower-4850.workers.dev",
-    "root",
-    "Sita9950k",
-    "music"
-);
+try {
+    $conn = new D1Connection(
+        "d1_connector.your-worker.workers.dev",
+        "root",
+        "yourpass",
+        "your_db"
+    );
 
-$cursor = $conn->cursor();
-$cursor->execute("SELECT * FROM tracks LIMIT 1");
+    $cursor = $conn->cursor();
+    $cursor->execute("SELECT * FROM tracks LIMIT 1");
+    $result = $cursor->fetchall();
 
-$result = $cursor->fetchall();
+    echo "Result:\n";
+    print_r($result);
 
-print_r($result);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+
 ```
 
 ---
