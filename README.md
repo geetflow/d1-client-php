@@ -52,8 +52,6 @@ d1-client-php/
 ```php
 <?php
 
-<?php
-
 require __DIR__ . '/../vendor/autoload.php';
 
 use D1Client\D1Connection;
